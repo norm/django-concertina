@@ -1,7 +1,7 @@
 from setuptools import setup
 
 PACKAGE = 'django-concertina'
-VERSION = '1.0'
+VERSION = '1.0.1'
 
 setup(
     name=PACKAGE,

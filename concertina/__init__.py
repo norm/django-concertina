@@ -11,7 +11,12 @@ SPREADS = {
 
 
 def round_to_nearest(x, base):
-    return int(base * round(float(x)/base))
+    # nudge towards rounding up (eg 4.5 towards 5) because in python3: "if two
+    # multiples are equally close, rounding is done toward the even choice"
+    # ... which makes no sense to me
+    divided = float(x) / base
+    rounded = round(divided + 0.01)
+    return base * int(rounded)
 
 
 def find_links_in_gap(link_count, start, finish, is_left=False):
@@ -67,7 +72,7 @@ def concertina(page, total_pages):
 
     # we can always show 1-10 no matter what, so don't bother calculating it
     if total_pages < 11:
-        return range(1, total_pages+1)
+        return list(range(1, total_pages+1))
 
     # current, first, and last pages are always present
     pages = {page: 1, 1: 1, total_pages: 1}
