@@ -1,7 +1,7 @@
 django-concertina
 =================
 
-![Build status](https://travis-ci.org/norm/django-concertina.svg)
+[Travis build status: ![](https://travis-ci.org/norm/django-concertina.svg)](https://travis-ci.org/norm/django-concertina/)
 
 Implements concertina-style pagination for use in django templates and code.
 
