@@ -37,3 +37,14 @@ Then in python directly:
     [1, 6, 9, 10, 11, 12, 13, 14, 15, 16, 19, 22, 27]
     >>> concertina(427, 2783)
     [1, 200, 425, 426, 427, 428, 429, 600, 800, 1150, 1500, 2050, 2783]
+
+Or in your templates, first add `concertina` to your `INSTALLED_APPS`
+then:
+
+    {% load concertina_pagination %}
+
+    <ul>
+        {% for page in page_obj|concertina_pagination %}
+          <li><a href='?page={{page}}'>{{page}}</a></li>
+        {% endfor %}
+    </ul>
