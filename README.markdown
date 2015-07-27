@@ -1,6 +1,8 @@
 django-concertina
 =================
 
+![Build status](https://travis-ci.org/norm/django-concertina.svg)
+
 Implements concertina-style pagination for use in django templates and code.
 
 Concertina pagination (also known as bell-curve pagination) provides for
